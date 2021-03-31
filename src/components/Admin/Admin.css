@@ -1,0 +1,12 @@
+.saveProductForm{
+    margin: 5% 0 2% 40%;
+}
+
+.saveProductForm input {
+    display: block;
+    /* margin-top: 25px; */
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+}
