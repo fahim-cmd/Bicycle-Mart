@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../../App';
 import CardProduct from '../CardProduct/CardProduct';
+import NavItems from '../NavItems/NavItems';
+
 
 const Home = () => {
 
+    const [product, setProduct] = useContext(ProductContext)
+    
     const [cycles, setCycles] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:5050/products')
             .then(res => res.json())
-            .then(data => setCycles(data))
+            .then(data => {
+                setCycles(data)
+                setProduct(data)
+                
+            })
     }, [])
+ 
 
     return (
         <>
             <div>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/admin">Admin</Link>
-                    </li>
-                    <li>
-                        <Link to="/orders">Orders</Link>
-                    </li>
-                </ul>
+               <NavItems></NavItems>
             </div>
 
             <div className="row justify-content-around ">
                 {
-                    cycles.map(cycle => <CardProduct cycles={cycle}></CardProduct>)
+                    cycles.map(cycle => <CardProduct cycles={cycle} key={cycle._id}></CardProduct>)
                 }
             </div>
+            
         </>
     );
 };
