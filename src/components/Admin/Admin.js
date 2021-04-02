@@ -24,7 +24,7 @@ const Admin = () => {
             },
             body: JSON.stringify(eventData)
         })
-        .then(res => console.log("server side response", res))
+            .then(res => console.log("server side response", res))
     };
     // make sure to read state before render to subscribe to the state update (Proxy).
     const { dirtyFields } = formState;
@@ -48,9 +48,7 @@ const Admin = () => {
 
     return (
         <div>
-            <h3>admin admin</h3>
             <SideNav></SideNav>
-
             <form onSubmit={handleSubmit(onSubmit)} className="saveProductForm">
                 <label>Product name</label>
                 <input type="text" name="name" placeholder="Write Your Product Name" ref={register({ required: true })} />
@@ -59,13 +57,13 @@ const Admin = () => {
                 <input type="text" name="price" placeholder="add a price" ref={register} />
 
                 <label>weight</label> <br />
-                <input type="text" name="weight" placeholder="add a weight" ref={register} />
+                <input type="text" name="weight" placeholder="add a weight" ref={register} /> 
 
                 <label>Add Photo</label> <br />
-                <input type="file" name="photo" onChange={handleImageUpload} />
+                <input type="file" name="photo" onChange={handleImageUpload} className="btn btn-outline-danger" style={{border: 'none'}}/>
 
                 <br />
-                <input type="submit" />
+                <input className="btn btn-outline-danger" type="submit" />
             </form>
 
         </div>

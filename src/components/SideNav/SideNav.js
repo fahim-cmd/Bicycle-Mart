@@ -6,9 +6,10 @@ const SideNav = () => {
     return (
         <div>
             <div class="sidebar">
-                <Link class="active" to="/home">Home</Link>
-                <Link to="/manage">Manage Product</Link>
-                <Link to="/addProduct">Add Product</Link>
+                <h6 style={{fontFamily: 'cursive', color: 'white', fontWeight: 'bold', padding: '20px'}}>BICYCLE MART</h6>
+                <Link class="active" to="/">Home</Link>
+                <Link to="/admin">Manage Product</Link>
+                <Link to="/admin">Add Product</Link>
                 <Link to="/editProduct">Edit Product</Link>
             </div>
 

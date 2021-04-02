@@ -15,6 +15,9 @@ const NavItems = () => {
                 <li>
                     <Link to="/orders">Orders</Link>
                 </li>
+                <li>
+                    <Link to="/deals">Deals</Link>
+                </li>
                 <Link to="/login"><button className="btn btn-outline-danger">Login</button></Link>
             </ul>
         </div>
